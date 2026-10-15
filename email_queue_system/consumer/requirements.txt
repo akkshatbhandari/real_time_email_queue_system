@@ -1,0 +1,5 @@
+pika
+boto3
+python-dotenv
+sqlalchemy
+psycopg[binary]

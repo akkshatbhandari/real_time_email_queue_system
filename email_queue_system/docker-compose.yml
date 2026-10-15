@@ -1,0 +1,24 @@
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: email-rabbitmq
+    restart: unless-stopped
+
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+
+  mailpit:
+    image: axllent/mailpit
+    container_name: email-mailpit
+    restart: unless-stopped
+
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+
+volumes:
+  postgres_data:
